@@ -6,60 +6,120 @@
     <title>Wedding Invitation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            color: #333;
+            font-family: 'Cursive', Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: #444;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
         .container {
             padding: 20px;
-            margin: 50px auto;
-            max-width: 600px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 800px;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ff8c00;
         }
-        h1 {
+
+        .header {
+            color: #b22222;
             font-size: 2.5em;
-            color: #8a2be2;
+            font-weight: bold;
         }
+
+        h1 {
+            font-size: 3em;
+            color: #a52a2a;
+            font-family: 'Dancing Script', cursive;
+        }
+
         h2 {
-            color: #ff69b4;
+            font-size: 2em;
+            color: #8b0000;
+            margin: 10px 0;
         }
+
         p {
-            font-size: 1.2em;
+            font-size: 1.4em;
             line-height: 1.5;
+            margin: 10px 0;
         }
+
         .date {
             font-weight: bold;
-            color: #2e8b57;
+            color: #006400;
+            font-size: 1.6em;
         }
+
+        .venue {
+            margin: 20px 0;
+            font-size: 1.3em;
+            color: #d2691e;
+        }
+
+        .venue a {
+            color: #0000cd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .venue a:hover {
+            text-decoration: underline;
+        }
+
         .countdown {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #d9534f;
+            margin-top: 30px;
+            font-size: 1.8em;
+            color: #ff4500;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            background: #fff8dc;
+            border: 2px solid #daa520;
+            display: inline-block;
+            border-radius: 10px;
         }
+
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 0.9em;
-            color: #777;
+            color: #555;
+            font-style: italic;
+        }
+
+        .decorative-banner {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .floral-divider {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>You Are Invited!</h1>
-        <h2>Amitosh & Sinatra</h2>
-        <p>We are excited to invite you to celebrate our wedding.</p>
-        <p>Join us on this special day:</p>
-        <p class="date">February 16, 2025</p>
-        <p>At: The Grand Venue, Bangalore</p>
-        <p>Your presence will make our day even more memorable.</p>
-        <p class="countdown" id="countdown">Countdown: Loading...</p>
-        <div class="footer">© 2025 Amitosh & Sinatra's Wedding</div>
+        <h1 class="header">You're Cordially Invited</h1>
+        <h2>Amitosh ❤️ Sinatra</h2>
+        <p>We are overjoyed to invite you to celebrate our wedding day.</p>
+        <p>Date: <span class="date">February 16, 2025</span></p>
+        <p>Venue:</p>
+        <p class="venue">
+            <a href="https://www.google.com/maps/place/Ajvi+Ocean+Wedding+Hall+%26+Beachside/@14.8164449,74.1270508,829m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbe61eac31dd42d:0x1d19d9a93a68cf94!8m2!3d14.8164449!4d74.1270508!16s%2Fg%2F11sby573tp?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                Ajvi Ocean Wedding Hall & Beachside, Karnataka
+            </a>
+        </p>
+        <p>Your presence will make our day even more special.</p>
+        <div class="countdown" id="countdown">Countdown: Loading...</div>
+        <img src="https://i.imgur.com/MbQsriR.png" alt="Decorative Banner" class="decorative-banner">
+        <img src="https://i.imgur.com/1Yv5RvO.png" alt="Floral Divider" class="floral-divider">
     </div>
+    <div class="footer">© 2025 Amitosh & Sinatra's Wedding</div>
 
     <script>
         // Countdown Timer Script
