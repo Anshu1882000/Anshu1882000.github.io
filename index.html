@@ -36,6 +36,11 @@
             font-weight: bold;
             color: #2e8b57;
         }
+        .countdown {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #d9534f;
+        }
         .footer {
             margin-top: 20px;
             font-size: 0.9em;
@@ -46,14 +51,44 @@
 <body>
     <div class="container">
         <h1>You Are Invited!</h1>
-        <h2>Anshu Kumar & Ami Sin</h2>
+        <h2>Amitosh & Sinatra</h2>
         <p>We are excited to invite you to celebrate our wedding.</p>
         <p>Join us on this special day:</p>
-        <p class="date">March 10, 2025</p>
+        <p class="date">February 16, 2025</p>
         <p>At: The Grand Venue, Bangalore</p>
         <p>Your presence will make our day even more memorable.</p>
-        <p>Save the date!</p>
-        <div class="footer">© 2025 Anshu & Ami's Wedding</div>
+        <p class="countdown" id="countdown">Countdown: Loading...</p>
+        <div class="footer">© 2025 Amitosh & Sinatra's Wedding</div>
     </div>
+
+    <script>
+        // Countdown Timer Script
+        function startCountdown() {
+            const weddingDate = new Date("2025-02-16T00:00:00").getTime();
+            const countdownElement = document.getElementById("countdown");
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = weddingDate - now;
+
+                if (timeLeft < 0) {
+                    countdownElement.innerHTML = "The wedding day is here!";
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `Countdown: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+            }
+
+            setInterval(updateCountdown, 1000);
+        }
+
+        // Start the countdown
+        startCountdown();
+    </script>
 </body>
 </html>
