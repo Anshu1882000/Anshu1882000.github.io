@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Amitosh ❤️ Sinatra Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Background and Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Playfair Display', serif;
             background: linear-gradient(135deg, #E6E6FA 0%, #F0E6FF 100%);
             color: #4B0082;
-            margin: 0;
-            padding: 0;
             text-align: center;
             background-attachment: fixed;
             line-height: 1.6;
+            padding: 10px;
         }
 
-        /* Watercolor Background Pattern */
         body::before {
             content: "";
             position: fixed;
@@ -37,62 +45,30 @@
 
         .container {
             position: relative;
-            padding: 40px 20px;
-            margin: 30px auto;
-            max-width: 900px;
+            padding: 20px;
+            margin: 15px auto;
+            width: 100%;
+            max-width: 500px;
             background: rgba(255, 255, 255, 0.8);
-            border-radius: 30px;
+            border-radius: 20px;
             box-shadow: 0 15px 35px rgba(75, 0, 130, 0.1);
             overflow: hidden;
         }
 
-        /* Decorative Border */
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(75, 0, 130, 0.05) 10px,
-                rgba(75, 0, 130, 0.05) 20px
-            );
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate {
-            100% {
-                transform: rotate(1turn);
-            }
-        }
-
-        /* Header Styling */
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4em;
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
             margin: 20px 0;
-            color: #4B0082;
-            text-shadow: 2px 2px 4px rgba(75, 0, 130, 0.2);
         }
 
-        h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5em;
-            margin: 15px 0;
-            color: #8A4B38;
-        }
-
-        /* Couple Image Section */
         .couple-image {
-            max-width: 400px;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
             border-radius: 50%;
-            border: 5px solid #4B0082;
-            margin: 30px auto;
+            border: 4px solid #4B0082;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
@@ -101,113 +77,207 @@
             transform: scale(1.05);
         }
 
-        /* Existing Styles with Refinements */
-        .date, .venue {
-            font-family: 'Dancing Script', cursive;
-            color: #8A4B38;
-            font-weight: bold;
-        }
-
-        .date {
-            font-size: 2em;
+        /* Enhanced Date Styling */
+        .date-section {
+            background: linear-gradient(145deg, #8A4B38, #4B0082);
+            color: white;
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 15px;
             margin: 15px 0;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .venue {
-            font-size: 1.8em;
-            margin: 20px 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #8A4B38;
+            margin: 10px 0;
+            font-weight: bold;
         }
 
+        /* Beautiful Countdown Styling */
         .countdown {
-            font-family: 'Courier New', monospace;
-            background-color: rgba(138, 75, 56, 0.1);
-            padding: 15px;
-            border-radius: 15px;
-            display: inline-block;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
         }
 
-        .map-link {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 12px 25px;
+        .countdown-item {
             background: linear-gradient(145deg, #4B0082, #8A4B38);
             color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 15px;
+            min-width: 80px;
+            text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .map-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        .countdown-label {
+            font-size: 0.8em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .map-section {
+            position: relative;
+            margin: 20px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: perspective(1000px) rotateX(2deg);
+            transition: all 0.3s ease;
+        }
+
+        .map-section:hover {
+            transform: perspective(1000px) rotateX(0);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         iframe {
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 300px;
+            border: none;
+            filter: grayscale(30%) brightness(90%);
+            transition: filter 0.3s ease;
         }
 
-        .footer {
-            margin: 30px 0;
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg, 
+                rgba(75, 0, 130, 0.6), 
+                rgba(138, 75, 56, 0.6)
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            text-align: center;
+        }
+
+        .map-section:hover .map-overlay {
+            opacity: 1;
+        }
+
+        .map-overlay-content {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+
+        /* Rest of the previous styles remain the same */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            margin: 10px 0;
+            color: #4B0082;
+            text-shadow: 1px 1px 3px rgba(75, 0, 130, 0.2);
+        }
+
+        h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 1.2em;
+            font-size: 2em;
+            margin: 10px 0;
             color: #8A4B38;
-            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>You're Invited!</h1>
-        <h2>Amitosh ❤️ Sinatra</h2>
+        <h2>Amitosh weds Sinatra</h2>
         
-        <!-- Added Couple Image -->
-        <img src="couple_foto.png" alt="Amitosh and Sinatra" class="couple-image">
+        <div class="image-container">
+            <img src="couple_foto.png" alt="Amitosh and Sinatra" class="couple-image">
+        </div>
         
         <p>We are thrilled to invite you to celebrate our big day!</p>
-        <p>Date: <span class="date">February 16, 2025</span></p>
-        <p>Venue:</p>
-        <p class="venue">Ajvi Ocean Wedding Hall & Beachside</p>
+        
+        <div class="date-section">
+            February 16, 2025
+        </div>
 
-        <!-- Existing Google Map Embed -->
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15602.768022916162!2d74.1270508!3d14.8164449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbe61eac31dd42d%3A0x1d19d9a93a68cf94!2sAjvi%20Ocean%20Wedding%20Hall%20%26%20Beachside!5e0!3m2!1sen!2sin!4v1702727793371!5m2!1sen!2sin" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item" id="days">
+                <div id="days-value">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item" id="hours">
+                <div id="hours-value">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item" id="minutes">
+                <div id="minutes-value">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+        </div>
+        
+        <p class="venue">Ajvi Ocean Wedding Hall</p>
 
-        <a class="map-link" href="https://www.google.com/maps/place/Ajvi+Ocean+Wedding+Hall+%26+Beachside/@14.8164449,74.1270508,829m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbe61eac31dd42d:0x1d19d9a93a68cf94!8m2!3d14.8164449!4d74.1270508!16s%2Fg%2F11sby573tp?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Open Map in Google Maps</a>
+        <div class="map-section">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15602.768022916162!2d74.1270508!3d14.8164449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbe61eac31dd42d%3A0x1d19d9a93a68cf94!2sAjvi%20Ocean%20Wedding%20Hall%20%26%20Beachside!5e0!3m2!1sen!2sin!4v1702727793371!5m2!1sen!2sin" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <div class="map-overlay">
+                <div class="map-overlay-content">
+                    <h3>Ajvi Ocean Wedding Hall</h3>
+                    <p>Coastal Venue for Our Special Day</p>
+                </div>
+            </div>
+        </div>
+
 
         <p>Your presence will make our day extra special.</p>
-        <div class="countdown" id="countdown">Countdown: Loading...</div>
+        
+        
     </div>
 
     <div class="footer">© 2025 Amitosh & Sinatra Wedding Celebration</div>
 
     <script>
         function startCountdown() {
+            const daysEl = document.getElementById('days-value');
+            const hoursEl = document.getElementById('hours-value');
+            const minutesEl = document.getElementById('minutes-value');
             const weddingDate = new Date("2025-02-16T00:00:00").getTime();
-            const countdownElement = document.getElementById("countdown");
 
             function updateCountdown() {
                 const now = new Date().getTime();
                 const timeLeft = weddingDate - now;
 
                 if (timeLeft < 0) {
-                    countdownElement.innerHTML = "It's the wedding day!";
+                    daysEl.textContent = '0';
+                    hoursEl.textContent = '0';
+                    minutesEl.textContent = '0';
                     return;
                 }
 
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60)) / (1000 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 
-                countdownElement.innerHTML = `Countdown: ${days} Days, ${hours} Hours, ${minutes} Minutes`;
+                daysEl.textContent = days.toString().padStart(2, '0');
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
             }
 
+            updateCountdown();
             setInterval(updateCountdown, 1000);
         }
 
