@@ -2,291 +2,213 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Amitosh ❤️ Sinatra Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshu Kumar - Operations Researcher</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #E6E6FA 0%, #F0E6FF 100%);
-            color: #4B0082;
-            text-align: center;
-            background-attachment: fixed;
             line-height: 1.6;
-            padding: 10px;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: 
-                radial-gradient(#9370DB 8%, transparent 8%),
-                radial-gradient(#9370DB 8%, transparent 8%);
-            background-position: 0 0, 25px 25px;
-            background-size: 50px 50px;
-            z-index: -1;
+            color: #333;
+            background-color: #f5f5f5;
         }
 
         .container {
-            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
-            margin: 15px auto;
-            width: 100%;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(75, 0, 130, 0.1);
-            overflow: hidden;
         }
 
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin: 20px 0;
-        }
-
-        .couple-image {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #4B0082;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .couple-image:hover {
-            transform: scale(1.05);
-        }
-
-        /* Enhanced Date Styling */
-        .date-section {
-            background: linear-gradient(145deg, #8A4B38, #4B0082);
-            color: white;
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 15px;
-            margin: 15px 0;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .venue {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5em;
-            color: #8A4B38;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        /* Beautiful Countdown Styling */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .countdown-item {
-            background: linear-gradient(145deg, #4B0082, #8A4B38);
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
-            min-width: 80px;
+        header {
             text-align: center;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 40px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .countdown-label {
-            font-size: 0.8em;
-            margin-top: 5px;
-            opacity: 0.8;
-        }
-
-        .map-section {
-            position: relative;
-            margin: 20px 0;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            transform: perspective(1000px) rotateX(2deg);
-            transition: all 0.3s ease;
-        }
-
-        .map-section:hover {
-            transform: perspective(1000px) rotateX(0);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            filter: grayscale(30%) brightness(90%);
-            transition: filter 0.3s ease;
-        }
-
-        .map-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                135deg, 
-                rgba(75, 0, 130, 0.6), 
-                rgba(138, 75, 56, 0.6)
-            );
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            color: white;
-            text-align: center;
-        }
-
-        .map-section:hover .map-overlay {
-            opacity: 1;
-        }
-
-        .map-overlay-content {
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 80%;
-        }
-
-        /* Rest of the previous styles remain the same */
-        h1, p {
-            font-family: 'Great Vibes', cursive;
+        h1 {
             font-size: 2.5em;
-            margin: 10px 0;
-            color: #4B0082;
-            text-shadow: 1px 1px 3px rgba(75, 0, 130, 0.2);
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2em;
-            margin: 10px 0;
-            color: #8A4B38;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .experience-item .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>You're Invited!</h1>
-        <h2>Amitosh weds Sinatra</h2>
-        
-        <div class="image-container">
-            <img src="couple_foto.png" alt="Amitosh and Sinatra" class="couple-image">
-        </div>
-        
-        <p>We are thrilled to invite you to celebrate our big day!</p>
-        
-        <div class="date-section">
-            February 16, 2025
-        </div>
-
-        <div class="countdown" id="countdown">
-            <div class="countdown-item" id="days">
-                <div id="days-value">00</div>
-                <div class="countdown-label">Days</div>
+        <header>
+            <h1>Anshu Kumar</h1>
+            <div class="contact-info">
+                <p>
+                    <a href="tel:+91-8541935371">+91-8541935371</a> |
+                    <a href="mailto:anshukumar1882000@gmail.com">anshukumar1882000@gmail.com</a> |
+                    <a href="https://www.linkedin.com/in/anshu-kumar-804b241ab/" target="_blank">LinkedIn</a>
+                </p>
             </div>
-            <div class="countdown-item" id="hours">
-                <div id="hours-value">00</div>
-                <div class="countdown-label">Hours</div>
+            <p>Operations Researcher with experience in solving complex operational problems using AI techniques. Skilled in applying advanced algorithms, optimization methods, and Classical Machine Learning, with a strong interest in emerging AI domains such as Generative AI and Deep Learning.</p>
+        </header>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Technical Skills</h3>
+                    <p>Python, SQL, Machine Learning, Deep Learning, Reinforcement Learning, MLOps</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Software/Tools</h3>
+                    <p>AWS, Airflow, MLFlow, Tensorflow, Pytorch, Git, GitHub</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <p>Communication, Adaptability, Team Player</p>
+                </div>
             </div>
-            <div class="countdown-item" id="minutes">
-                <div id="minutes-value">00</div>
-                <div class="countdown-label">Minutes</div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Operations Researcher</h3>
+                <div class="company">TCS Research, Bangalore, India</div>
+                <div class="date">July 2023 - Present</div>
+                <ul>
+                    <li>Formulated Adaptive Energy Distribution System for optimizing energy distribution</li>
+                    <li>Optimized Power Procurement with advanced iterative solutions</li>
+                    <li>Solved mixed fleet routing problem using MINLP, Genetic Algorithms, and RL</li>
+                </ul>
             </div>
-        </div>
-        
-        <p class="venue">Wedding venue</p>
 
-        <div class="map-section">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15602.768022916162!2d74.1270508!3d14.8164449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbe61eac31dd42d%3A0x1d19d9a93a68cf94!2sAjvi%20Ocean%20Wedding%20Hall%20%26%20Beachside!5e0!3m2!1sen!2sin!4v1702727793371!5m2!1sen!2sin" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
+            <div class="experience-item">
+                <h3>AI Intern</h3>
+                <div class="company">Myelin Foundry, Bangalore, India</div>
+                <div class="date">March 2023 - June 2023</div>
+                <ul>
+                    <li>Applied AI-driven video restoration techniques to enhance video quality</li>
+                    <li>Designed and optimized prompts for generative AI models in dynamic advertisements</li>
+                </ul>
+            </div>
 
-        </div>
+            <div class="experience-item">
+                <h3>Data Scientist Intern</h3>
+                <div class="company">Harman International, Bangalore, India</div>
+                <div class="date">May 2022 - Feb 2023</div>
+                <ul>
+                    <li>Developed ML-Based Issue Ticket Assignment System using NLP</li>
+                    <li>Tackled complex data preprocessing and model selection challenges</li>
+                </ul>
+            </div>
+        </section>
 
-        <p class="venue">Haldi Venue</p>
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Indian Institute Of Information Technology, Kottayam</h3>
+                <p>Bachelor of Technology in Computer Science and Engineering</p>
+                <p>GPA: 9.03 | Aug 2019 – April 2023</p>
+            </div>
+        </section>
 
+        <section>
+            <h2>Achievements</h2>
+            <ul>
+                <li>Research paper on "Adaptive Energy Distribution" accepted at ISGT Asia 2024 conference</li>
+                <li>Research paper on "Optimized Power procurement" accepted at ACM BuildSys 2024 conference</li>
+            </ul>
+        </section>
 
-        <div class="map-section" >
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1236664240223!2d74.1065838!3d14.872645299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbe5d561189702d%3A0xcc511fbc14b18529!2socean%20paradise%20beach%20homestay!5e1!3m2!1sen!2sin!4v1734527508951!5m2!1sen!2sin" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-        </div>
-
-
-        <p>Your presence will make our day extra special.</p>
-        
-        
+        <section style="text-align: center;">
+            <a href="Anshukumar.pdf" download class="download-btn">Download Resume</a>
+        </section>
     </div>
-
-
-    <script>
-        function startCountdown() {
-            const daysEl = document.getElementById('days-value');
-            const hoursEl = document.getElementById('hours-value');
-            const minutesEl = document.getElementById('minutes-value');
-            const weddingDate = new Date("2025-02-16T00:00:00").getTime();
-
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const timeLeft = weddingDate - now;
-
-                if (timeLeft < 0) {
-                    daysEl.textContent = '0';
-                    hoursEl.textContent = '0';
-                    minutesEl.textContent = '0';
-                    return;
-                }
-
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-
-                daysEl.textContent = days.toString().padStart(2, '0');
-                hoursEl.textContent = hours.toString().padStart(2, '0');
-                minutesEl.textContent = minutes.toString().padStart(2, '0');
-            }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        }
-
-        startCountdown();
-    </script>
 </body>
 </html>
