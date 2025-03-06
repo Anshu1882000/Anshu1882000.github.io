@@ -3,212 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshu Kumar - Operations Researcher</title>
+    <title>Anshu Kumar - Personal Profile</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
+            background-color: #f4f4f9;
             color: #333;
-            background-color: #f5f5f5;
         }
-
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 0;
             background-color: #fff;
             border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+        h1, h2 {
+            color: #2c3e50;
+        }
         h1 {
             font-size: 2.5em;
-            color: #2c3e50;
             margin-bottom: 10px;
+            color: #3498db;
         }
-
+        h2 {
+            font-size: 1.8em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        p {
+            line-height: 1.6;
+        }
         .contact-info {
-            color: #666;
             margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #555;
         }
-
         .contact-info a {
             color: #3498db;
             text-decoration: none;
         }
-
-        section {
-            background-color: #fff;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .contact-info a:hover {
+            text-decoration: underline;
         }
-
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 20px;
         }
-
-        .skill-card {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
+        .skill {
+            display: flex;
+            align-items: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
         }
-
-        .experience-item {
-            margin-bottom: 30px;
+        .skill img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
-
-        .experience-item h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
+        .experience, .education, .achievements {
+            margin-bottom: 20px;
         }
-
-        .experience-item .company {
+        .experience ul, .education ul, .achievements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .experience li, .education li, .achievements li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+        .experience li::before, .education li::before, .achievements li::before {
+            content: "•";
             color: #3498db;
-            font-weight: bold;
-            margin-bottom: 10px;
+            position: absolute;
+            left: 0;
         }
-
-        .experience-item .date {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-left: 20px;
-        }
-
-        .education-item {
+        .research-papers {
             margin-bottom: 20px;
         }
-
-        .download-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #3498db;
-            color: #fff;
+        .research-papers a {
+            color: #3498db;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
         }
-
-        .download-btn:hover {
-            background-color: #2980b9;
+        .research-papers a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header-content {
+            flex: 1;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #3498db;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .skill {
+                font-size: 0.8em;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .profile-pic {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Anshu Kumar</h1>
-            <div class="contact-info">
-                <p>
-                    <a href="tel:+91-8541935371">+91-8541935371</a> |
-                    <a href="mailto:anshukumar1882000@gmail.com">anshukumar1882000@gmail.com</a> |
-                    <a href="https://www.linkedin.com/in/anshu-kumar-804b241ab/" target="_blank">LinkedIn</a>
-                </p>
+        <!-- Header Section with Profile Picture -->
+        <div class="header">
+            <div class="header-content">
+                <h1>Anshu Kumar</h1>
+                <div class="contact-info">
+                    <p>+91-8541935371 | <a href="mailto:anshukumar1882000@gmail.com">anshukumar1882000@gmail.com</a> | <a href="https://www.linkedin.com/in/anshu-kumar-804b241ab/">LinkedIn</a></p>
+                </div>
             </div>
-            <p>Operations Researcher with experience in solving complex operational problems using AI techniques. Skilled in applying advanced algorithms, optimization methods, and Classical Machine Learning, with a strong interest in emerging AI domains such as Generative AI and Deep Learning.</p>
-        </header>
+            <div class="profile-pic">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQH85zm9eKXRNQ/profile-displayphoto-shrink_800_800/B56ZRfE0T0H0Ac-/0/1736761887277?e=1746662400&v=beta&t=Y4GBw9nPhW8IEDaIOgf-3hEb_dYxdIggG1Iz-VAcaRw" alt="Anshu Kumar"> <!-- Replace with your image link -->
+            </div>
+        </div>
 
-        <section>
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>Researcher with experience in solving complex operational problems using AI techniques. Skilled in applying advanced algorithms and optimization methods, with a strong interest in emerging AI domains such as Generative AI and deep learning. Passionate about leveraging AI to drive innovation and efficiency in various industries.</p>
+        </div>
+
+        <div class="section">
             <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <h3>Technical Skills</h3>
-                    <p>Python, SQL, Machine Learning, Deep Learning, Reinforcement Learning, MLOps</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Software/Tools</h3>
-                    <p>AWS, Airflow, MLFlow, Tensorflow, Pytorch, Git, GitHub</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Soft Skills</h3>
-                    <p>Communication, Adaptability, Team Player</p>
-                </div>
+            <div class="skills">
+                <!-- Technical Skills -->
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"> Python</div>
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"> SQL</div>
+                <div class="skill"><img src="https://static.vecteezy.com/system/resources/previews/035/742/223/non_2x/artificial-intelligent-icon-line-icon-for-your-website-mobile-presentation-and-logo-design-vector.jpg" alt="Machine Learning"> Machine Learning</div>
+                <div class="skill"><img src="https://cdn-icons-png.flaticon.com/512/8637/8637101.png" alt="Deep Learning"> Deep Learning</div>
+                <div class="skill"><img src="https://p1.hiclipart.com/preview/837/946/329/bird-logo-reinforcement-learning-machine-learning-deep-learning-artificial-intelligence-software-agent-data-science-robot-png-clipart.jpg"> Reinforcement Learning</div>
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/artificial-intelligence.png" alt="MLOps"> MLOps</div>
+        
+                <!-- Software/Tools -->
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS"> AWS</div>
+                <div class="skill"><img src="https://djeqr6to3dedg.cloudfront.net/repo-logos/apache/airflow/live/logo-1703896633736.png" alt="Airflow"> Airflow</div>
+                <div class="skill"><img src="https://miro.medium.com/v2/resize:fit:1056/0*5Hubk4Nwe7BdQS2D" alt="MLFlow"> MLFlow</div>
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/tensorflow.png" alt="TensorFlow"> TensorFlow</div>
+                <div class="skill"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYgDni61fImLmbS7es-r4Vsbc782DmR-HvmQ&s" alt="PyTorch"> PyTorch</div>
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git"> Git</div>
+                <div class="skill"><img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub"> GitHub</div>
             </div>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Operations Researcher</h3>
-                <div class="company">TCS Research, Bangalore, India</div>
-                <div class="date">July 2023 - Present</div>
+            <div class="experience">
                 <ul>
-                    <li>Formulated Adaptive Energy Distribution System for optimizing energy distribution</li>
-                    <li>Optimized Power Procurement with advanced iterative solutions</li>
-                    <li>Solved mixed fleet routing problem using MINLP, Genetic Algorithms, and RL</li>
+                    <strong>Researcher - TCS Research</strong> (July 2023 - Present)
+                    <ul>
+                        <li>Formulated Adaptive Energy Distribution System: Designed and implemented an adaptive system for optimizing energy distribution to enhance operational efficiency.</li>
+                        <li>Optimized Power Procurement: Developed an advanced iterative solution for the power procurement problem, enabling scalability that was previously unachievable with traditional MINLP techniques.</li>
+                        <li>Mixed Fleet Routing Problem: Formulated and solved the mixed fleet routing problem using a combination of MINLP, Genetic Algorithms, and Reinforcement Learning methodologies.</li>
+                    </ul>
+                    <strong>AI Intern - Myelin Foundry </strong> (March 2022 - June 2023)
+                    <ul>
+                        <li>Video Restoration: Applied AI-driven video restoration techniques to enhance the quality of old or degraded video footage, utilizing deep learning models to restore clarity, reduce noise, and improve resolution.</li>
+                        <li>Prompt Engineering for Dynamic Ads: Designed and optimized prompts for generative AI models to create dynamic advertisements. Developed strategies to ensure ads were contextually relevant and visually engaging, improving their effectiveness based on user input and real-time data.</li>
+                    </ul>
+                    <strong>Data Scientist Intern - Harman International </strong>(May 2022 - Feb 2023)
+                    <ul>
+                        <li>ML-Based Issue Ticket Assignment System: Developed an AI system using Natural Language Processing (NLP) to automate the assignment of issue tickets to the appropriate teams at Harman, streamlining workflow and improving efficiency.</li>
+                        <li>Challenges Overcome: Tackled key challenges such as selecting the most effective model for accurate classification, handling complex data preprocessing to ensure clean inputs, and interpreting results to continually refine the system.</li>
+                    </ul>
                 </ul>
             </div>
+        </div>
 
-            <div class="experience-item">
-                <h3>AI Intern</h3>
-                <div class="company">Myelin Foundry, Bangalore, India</div>
-                <div class="date">March 2023 - June 2023</div>
-                <ul>
-                    <li>Applied AI-driven video restoration techniques to enhance video quality</li>
-                    <li>Designed and optimized prompts for generative AI models in dynamic advertisements</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Data Scientist Intern</h3>
-                <div class="company">Harman International, Bangalore, India</div>
-                <div class="date">May 2022 - Feb 2023</div>
-                <ul>
-                    <li>Developed ML-Based Issue Ticket Assignment System using NLP</li>
-                    <li>Tackled complex data preprocessing and model selection challenges</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
+        <div class="section">
             <h2>Education</h2>
-            <div class="education-item">
-                <h3>Indian Institute Of Information Technology, Kottayam</h3>
-                <p>Bachelor of Technology in Computer Science and Engineering</p>
-                <p>GPA: 9.03 | Aug 2019 – April 2023</p>
+            <div class="education">
+                <ul>
+                    <li><strong>Bachelor of Technology in Computer Science and Engineering</strong> - Indian Institute of Information Technology, Kottayam (Aug 2019 – April 2023)</li>
+                    <li><strong>Class 12th</strong> - Aadarsh Gyanodya Senior Secondary School (April 2017 – April 2019)</li>
+                    <li><strong>Class 10th</strong> - Dav Public School (April 2008 – February 2017)</li>
+                </ul>
             </div>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Achievements</h2>
-            <ul>
-                <li>Research paper on "Adaptive Energy Distribution" accepted at ISGT Asia 2024 conference</li>
-                <li>Research paper on "Optimized Power procurement" accepted at ACM BuildSys 2024 conference</li>
-            </ul>
-        </section>
-
-        <section style="text-align: center;">
-            <a href="Anshukumar.pdf" download class="download-btn">Download Resume</a>
-        </section>
+            <div class="achievements">
+                <ul>
+                    <li>Research paper on "Adaptive Energy Distribution" accepted at ISGT Asia 2024 conference. <a href="https://ieeexplore.ieee.org/abstract/document/10876290">Paper link</a></li>
+                    <li>Research paper on "Optimized Power procurement" accepted at ACM BuildSys 2024 conference. <a href="https://dl.acm.org/doi/10.1145/3671127.3698180">Paper link</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
